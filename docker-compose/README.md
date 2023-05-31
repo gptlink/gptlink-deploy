@@ -4,7 +4,7 @@
 
 配置文件路径 `docker-compose/.env`
 
-### 运行项目
+## 运行项目
 
 ```shell
 # clone代码
@@ -42,8 +42,6 @@ services:
 
 ### 更新版本/更新配置
 
-如果本地已存在旧镜像，建议先删除 `docker rmi overnick/gptlink`
-
 ```shell
 # 更新 gptlink 代码
 git pull origin master
@@ -54,13 +52,55 @@ cd docker-compose
 docker-compose up -d gptlink
 ```
 
-### 开启 SSL
+## 开启 SSL
 
-修改 `docker-compose/gptlink/Dockerfile` 文件，根据内容提示进行修改。
+将证书放于以下目录并重命名，证书文件位于
 
-证书文件放于 
+`docker-compose/gptlink/ssl/website.key`
+`docker-compose/gptlink/ssl/website.pem`
 
-- docker-compose/gptlink/ssl/website.key
-- docker-compose/gptlink/ssl/website.pem
+给站点开启 SSl
 
-如要开启强制跳转至 https ， 需修改 `docker-compose/gptlink/conf/nginx-default.conf` 中的配置
+```shell
+# 将 docker-compose/gptlink/conf/nginx-default.conf.back 重命名为 nginx-default.conf
+cp docker-compose/gptlink/conf/nginx-default.conf.back docker-compose/gptlink/conf/nginx-default.conf
+
+# 查看并修改相关信息，默认不开启强制跳转至https
+vim docker-compose/gptlink/conf/nginx-default.conf
+
+# 修改 `docker-compose/gptlink/Dockerfile` 文件，解除相关注释
+vim docker-compose/gptlink/Dockerfile
+
+```
+
+重新构建镜像
+
+```shell
+
+cd docker-compose/
+
+# 重启镜像并运行
+docker-compose up --build -d gptlink
+```
+
+
+## 从 gptlink 迁移
+
+1. 暂停 mysql 与 redis 服务
+
+2. 复制数据到当前项目中 
+
+`gptlink/docker-compose/data/mysql` => `gptlink-deploy/docker-compose/data/mysql`
+
+`gptlink/docker-compose/data/redis` => `gptlink-deploy/docker-compose/data/redis`
+
+3. 复制 .env 文件
+
+`gptlink/docker-compose/.env` => `gptlink-deploy/docker-compose/.env`
+
+4. 重新运行服务
+
+```shell
+docker-compose up -d mysql redis gptlink
+```
+

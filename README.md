@@ -8,7 +8,7 @@
 </div>
 
 ## 说明
-本项目为 [gptlink](https://github.com/gptlink/gptlink) 部署文档，如部署方式不满足您的使用，欢迎提交建议或参与贡献。
+本项目为 [gptlink](https://github.com/gptlink/gptlink) 部署文档，原 [gptlink](https://github.com/gptlink/gptlink) 项目中部署部分配置将暂停维护与更新，后续版本中将移除，如部署方式不满足您的使用，欢迎补充参与贡献。
 
 ## 部署方式
 
