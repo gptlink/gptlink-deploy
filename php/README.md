@@ -20,4 +20,4 @@
 
 项目提供的 `Nginx` 配置文件，位于 `conf/nginx-default.conf`，可以参考或借鉴。前端项目目前请求的接口地址是固定的 `/api/`
 
-服务启动命令 `./gptserver/start.sh`
+服务启动命令参考 `gptserver/start.sh`
