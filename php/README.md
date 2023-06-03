@@ -1,4 +1,7 @@
 ## PHP 环境部署
+
+代码仓库地址：https://github.com/gptlink/gptlink
+
 环境部署需要动手能力较强的同学进行。项目目录结构为
 
 - gptserver  服务器项目目录
