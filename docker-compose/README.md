@@ -40,16 +40,18 @@ services:
 # ... 
 ```
 
-### 更新版本/更新配置
-
+### 保持更新/跟换版本
 ```shell
-# 更新 gptlink 代码
-git pull origin master
-
 # 进入 docker compose 目录
 cd docker-compose
 
-docker-compose up -d gptlink
+# 视情况修改 .env 中 GPTLINK_VERSION 参数
+
+# 获取最新版镜像
+docker pull overnick/gptlink
+
+# 重建镜像
+docker-compose up -d --build gptlink
 ```
 
 ## 开启 SSL
@@ -71,16 +73,6 @@ vim docker-compose/gptlink/conf/nginx-default.conf
 # 修改 `docker-compose/gptlink/Dockerfile` 文件，解除相关注释
 vim docker-compose/gptlink/Dockerfile
 
-```
-
-重新构建镜像
-
-```shell
-
-cd docker-compose/
-
-# 重启镜像并运行
-docker-compose up --build -d gptlink
 ```
 
 
