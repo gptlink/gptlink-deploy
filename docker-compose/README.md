@@ -80,15 +80,24 @@ vim docker-compose/gptlink/Dockerfile
 
 1. 暂停 mysql 与 redis 服务
 
-2. 复制数据到当前项目中 
+```shell
+docker-compose stop mysql redis
+```
 
-`gptlink/docker-compose/data/mysql` => `gptlink-deploy/docker-compose/data/mysql`
+2. 复制数据到当前项目中，以下路径中 gptlink 代表 [gitlink](https://github.com/gptlink/gptlink) 项目目录， gitlink-deply 代表本项目目录
 
-`gptlink/docker-compose/data/redis` => `gptlink-deploy/docker-compose/data/redis`
+示例: 
+
+```shell
+cp -r gptlink/docker-compose/data/mysql gptlink-deploy/docker-compose/data/mysql
+cp -r gptlink/docker-compose/data/redis gptlink-deploy/docker-compose/data/redis
+```
 
 3. 复制 .env 文件
 
-`gptlink/docker-compose/.env` => `gptlink-deploy/docker-compose/.env`
+```shell
+cp gptlink/docker-compose/.env gptlink-deploy/docker-compose/.env
+```
 
 4. 重新运行服务
 
