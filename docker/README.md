@@ -21,7 +21,7 @@ docker run -d -p 80:80 \
 docker run -it --rm gptlink /app/gptserver/test.sh
 
 ```
-Mac M1，M2芯片设备本地部署调试需增加参数 `--platform=linux/x86_64`
+Mac M1，M2芯片设备本地部署调试需增加参数 `--platform=linux/x86_64` , 示例如下
 
 ```shell
 docker run -d -p 80:80 \
@@ -33,7 +33,7 @@ docker run -d -p 80:80 \
    -e DB_PASSWORD="数据库密码" \
    -e REDIS_HOST="Redis 链接地址" \
    -e REDIS_PORT="Redis 端口号" \
-   overnick/gptlink:1.0
+   overnick/gptlink
 ```
 
 ### 更新版本/更新配置
