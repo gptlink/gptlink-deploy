@@ -40,7 +40,7 @@ services:
 # ... 
 ```
 
-### 保持更新/跟换版本
+### 保持更新/切换指定版本
 ```shell
 # 进入 docker compose 目录
 cd docker-compose
