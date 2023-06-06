@@ -75,6 +75,16 @@ vim docker-compose/gptlink/Dockerfile
 
 ```
 
+## 修改 Redis配置
+
+如需给 Redis 添加密码，修改文件 `redis/redis.conf` 中的配置，修改内容自行参考 Redis 配置。
+
+重新构建并运行 Redis 
+
+```shell
+docker-compose up -d --build redis
+```
+
 
 ## 从 gptlink 迁移
 
@@ -86,7 +96,7 @@ docker-compose stop mysql redis
 
 2. 复制数据到当前项目中，以下路径中 gptlink 代表 [gitlink](https://github.com/gptlink/gptlink) 项目目录， gitlink-deply 代表本项目目录
 
-示例: 
+示例:
 
 ```shell
 cp -r gptlink/docker-compose/data/mysql gptlink-deploy/docker-compose/data/mysql
@@ -104,4 +114,3 @@ cp gptlink/docker-compose/.env gptlink-deploy/docker-compose/.env
 ```shell
 docker-compose up -d mysql redis gptlink
 ```
-
