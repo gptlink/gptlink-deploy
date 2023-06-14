@@ -86,7 +86,7 @@ docker-compose up -d --build redis
 ```
 
 
-## 从 gptlink 迁移
+## 从 gptlink 迁移（gptlink < 1.0 版本迁移至本项目使用）
 
 1. 暂停 mysql 与 redis 服务
 
