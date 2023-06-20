@@ -24,6 +24,7 @@ cp .env.example .env
 docker-compose up -d mysql redis
 
 # 运行 Web 服务
+# 初次部署时，执行此步骤前需要确保 mysql 与 redis 已启动，并且初始化完成，可使用 logs 相关命令查看是否完成启动，或等待 5~10s 再执行。
 docker-compose up -d gptlink
 ```
 
