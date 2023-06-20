@@ -21,7 +21,7 @@ docker run -d -p 80:80 \
 docker run -it --rm gptlink /app/gptserver/test.sh
 
 ```
-Mac M1，M2芯片设备本地部署调试需增加参数 `--platform=linux/x86_64` , 示例如下
+ARM 架构芯片设备部署时需增加参数 `--platform=linux/x86_64` , 示例如下
 
 ```shell
 docker run -d -p 80:80 \
