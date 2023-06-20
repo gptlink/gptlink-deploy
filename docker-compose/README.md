@@ -27,7 +27,7 @@ docker-compose up -d mysql redis
 docker-compose up -d gptlink
 ```
 
-Mac M1，M2芯片设备本地部署调试需关闭容器 `platform: linux/x86_64` 注释
+ARM 架构芯片设备部署时需关闭容器 `platform: linux/x86_64` 注释
 ```yaml
 # ... 
 services:
