@@ -15,6 +15,7 @@
 - Docker Compose 部署 （推荐）[查看文档](./docker-compose/README.md)
 - Docker 部署 [查看文档](./docker/README.md)
 - PHP 环境部署 [查看文档](./php/README.md)
+- PHP 本地环境开发 mac版本 [查看文档](./php-local-mac/README.md)
 
 
 ## 欢迎贡献
